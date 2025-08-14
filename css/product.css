@@ -104,12 +104,28 @@
 }
 
 /* Color */
+.g-400 {
+    color: var(--gray-400);
+}
+
 .g-600 {
     color: var(--gray-600);
 }
 
+.g-800 {
+    color: var(--gray-800);
+}
+
+.p-300 {
+    color: var(--primary-300);
+}
+
 .p-700 {
     color: var(--primary-700);
+}
+
+.s-700 {
+    color: var(--secondary-700);
 }
 
 /* Heading */
@@ -120,7 +136,7 @@ h4,
 h5,
 h6,
 p {
-    font-weight: bold;
+    font-weight: 700;
     line-height: 1.25;
     margin-bottom: 0;
 }
@@ -156,10 +172,22 @@ p {
 .p-small {
     font-size: var(--tw--p-small);
     font-weight: 400;
+    letter-spacing: 1px;
+}
+
+html {
+    overflow-y: scroll;
 }
 
 body {
     font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+    /* padding-top: 52px; */
+    transform: none;
+    width: 100%;
+}
+
+input[type='text'] {
+    font-size: var(--tw--p-small);
 }
 
 /* Components */
@@ -183,8 +211,8 @@ body {
 
 .header-m {
     padding: var(--header--padding-y) var(--header--padding-x);
-    background-color: white;
-    box-shadow: 0 var(--layout-header-shadow-y, 2px) var(--layout-header-shadow-blur, 8px) 0 rgba(51, 51, 51, 0.15);
+    box-shadow: var(--header-shadow-m);
+    z-index: 1030;
 }
 
 .logo {
@@ -199,15 +227,73 @@ body {
     color: var(--secondary-700);
 }
 
-.img-group {
-    gap: 12px;
-    padding: 12px 24px;
+.form-control::placeholder {
+    color: var(--gray-500);
+    font-size: var(--tw--p-small);
+    font-weight: 400;
 }
 
+.form-check-input:checked {
+    background-color: var(--primary-500);
+    border-color: var(--primary-500);
+}
 
-/* ===商品上架-選擇規格=== */
+.img-wrapper {
+    border: 1.5px dashed var(--gray-600);
+}
+
+.form-switch .form-check-input {
+    border: 2px solid var(--gray-200);
+}
+
+.form-switch .form-check-input:checked {
+    background-color: var(--primary-700);
+    border-color: var(--primary-700);
+
+}
+
+.table {
+    border: 1px solid var(--gray-400);
+    font-size: var(--tw--p-small);
+    letter-spacing: 1px;
+    border-collapse: separate;
+    border-spacing: 1px;
+}
+
+.table th {
+    border: none;
+}
+
+thead {
+    border-bottom: 1px solid var(--gray-400);
+}
+
+tbody th,
+tbody td {
+    border: none;
+    padding: 0 !important;
+}
+
+thead tr {
+    padding-bottom: .75rem;
+}
+
+thead tr th {
+    font-weight: bold;
+}
+
+tbody tr {
+    padding: 8px 0 8px 8px;
+}
+
+td input.form-control {
+    padding: 4px 0 4px 8px;
+}
+
+/* Body */
 main {
-    padding: 52px var(--container-fluid--padding-x) var(--container-fluid--padding-y) var(--container-fluid--padding-x);
+    padding: 0 var(--container-fluid--padding-x) var(--container-fluid--padding-y) var(--container-fluid--padding-x);
+    position: relative;
 }
 
 .breadcrumb {
@@ -217,4 +303,39 @@ main {
 
 section {
     padding-top: var(--section--padding-top);
+}
+
+.img-group {
+    gap: 12px;
+    padding: 12px 24px;
+}
+
+.img-group img {
+    width: 6.75rem;
+    height: 6.75rem;
+}
+
+/* Modal */
+body.modal-open {
+    padding: 0 !important;
+}
+
+.modal-dialog {
+    /* max-width: 320px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-top: 52px;
+}
+
+.modal-header {
+    padding: var(--modal--header-padding-top) var(--modal--padding-x) 0 var(--modal--padding-x);
+}
+
+.modal-backdrop {
+    height: 100%;
+}
+
+.modal-body {
+    padding: var(--modal--body-padding-y) var(--modal--padding-x);
+    gap: 32px;
 }

@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <header class="header-m d-flex justify-content-between align-items-center w-100 position-absolute">
+    <header
+        class="header-m d-flex justify-content-between align-items-center w-100 fixed-top bg-white overflow-visible">
         <i class="fa-solid fa-bars"></i>
         <img class="logo" src="img/logo.svg" alt="">
         <i class="fa-solid fa-ellipsis"></i>
@@ -27,7 +28,6 @@
                 <li class="breadcrumb-item active" aria-current="page">商品上架</li>
             </ol>
         </nav>
-
         <section class="d-flex flex-column gap-5">
             <div class="form-info d-flex flex-column gap-3">
                 <div class="form-theme d-flex flex-column gap-2">
@@ -38,36 +38,413 @@
                             href="">批次新增商品</a>功能，匯入Excel試算表新增商品。</p>
                 </div>
                 <button type="button"
-                    class="btn btn-outline-secondary d-flex justify-content-center align-items-center">
-                    <p>Secondary</p>
+                    class="btn btn-outline-secondary w-100 d-flex justify-content-center align-items-center gap-1">
+                    <p>批次新增商品</p>
                 </button>
                 <button type="button"
-                    class="btn btn-primary d-flex justify-content-center align-items-center border border-0">
+                    class="btn btn-primary w-100 d-flex justify-content-center align-items-center border border-0">
                     <p></p>
                 </button>
             </div>
             <div class="form-title d-flex flex-column gap-2">
                 <h6>商品圖片</h6>
-                <div class="file-input-field d-flex flex-column gap-1">
+                <div class="file-input-field d-flex flex-column gap-1 overflow-hidden">
                     <p class="p-small g-600">
-                    <p class="p-small p-700 d-inline-block me-1">※</p>商品圖片最多可上傳7張。<br>
-                    <p class="p-small p-700 d-inline-block me-1">※</p>點擊圖片可編輯，長按圖片可拖曳調整順序。</p>
+                        <span class="p-small p-700 me-1">※</span>商品圖片最多可上傳7張。<br>
+                        <span class="p-small p-700 me-1">※</span>點擊圖片可編輯，長按圖片可拖曳調整順序。
+                    </p>
                     <div class="img-group d-flex">
-                        <img src="img/img12.jpg" alt=""><img src="img/img12.jpg" alt=""><img src="img/img12.jpg"
-                            alt=""><img src="img/img12.jpg" alt=""><img src="img/img12.jpg" alt=""><img
-                            src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                        <img class="object-fit-cover" src="img/img12.jpg" alt="">
+                    </div>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="inputGroupFile04"
+                            aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        <button class="btn btn-outline-secondary" type="button"
+                            id="inputGroupFileAddon04">Button</button>
                     </div>
                 </div>
-                <div class="input">
-                    <p class="p-small"></p>
-                    <p class="p-small"></p>
+            </div>
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>商品名稱</h6>
+                <div class="file-input-field d-flex flex-column gap-1">
+                    <div class="input-title">
+                        <p class="p-small g-600">
+                            <span class="p-small p-700 me-1">※</span>請勿使用&( )=;&apos;&quot;&lt;
+                            &gt;\等特殊符號，避免提交後賣場無法使用。
+                        </p>
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control border border-end-0" placeholder="請輸入商品名稱"
+                            aria-label="Username" aria-describedby="addon-wrapping" maxlength="60" minlength="1">
+                        <span class="input-group-text border border-start-0 bg-white p-small p-300"
+                            id="addon-wrapping">0/60</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>商品描述</h6>
+                <div>
+                    <label for="exampleFormControlTextarea1" class="form-label p-small g-600">
+                        <span class="p-small p-700 me-1">※</span>請勿使用&( )=;&apos;&quot;&lt;
+                        &gt;\等特殊符號，避免提交後賣場無法使用。</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="請輸入商品名稱"
+                        rows="3"></textarea>
+
+                </div>
+            </div>
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>商品規格</h6>
+                <div>
+                    <div class="button-items d-flex gap-1 pt-1">
+                        <button type="button"
+                            class="btn btn-outline-secondary w-100 d-flex justify-content-center align-items-center">
+                            <p>新增單規格</p>
+                        </button>
+                        <button type="button"
+                            class="btn btn-outline-secondary w-100 d-flex justify-content-center align-items-center"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <p>新增雙規格</p>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="d-flex flex-column gap-5">
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>商品狀態</h6>
+                <div class="radio-button-items d-flex flex-column gap-1">
+                    <div class="form-check m-0">
+                        <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                        <label class="form-check-label s-700" for="radioDefault1">
+                            新品
+                        </label>
+                    </div>
+                    <div class="form-check m-0">
+                        <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+                        <label class="form-check-label s-700" for="radioDefault2">二手
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>單次下單上限</h6>
+                <div class="file-input-field d-flex flex-column gap-1">
+                    <p class="p-small g-600">
+                        <span class="p-small p-700 me-1">※</span>0 為不設限。
+                    </p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control border border-end-0" value="0"
+                            aria-label="primarySpecName" aria-describedby="addon-wrapping" maxlength="25" minlength="1">
+                        <span class="input-group-text border border-start-0 bg-white s-700" id="addon-wrapping">個</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-title d-flex flex-column gap-2">
+                <h6>最低下單數量</h6>
+                <div class="file-input-field d-flex flex-column gap-1">
+                    <p class="p-small g-600">
+                        <span class="p-small p-700 me-1">※</span>0 為不設限。
+                    </p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control border border-end-0" value="0"
+                            aria-label="primarySpecName" aria-describedby="addon-wrapping" maxlength="25" minlength="1">
+                        <span class="input-group-text border border-start-0 bg-white s-700" id="addon-wrapping">個</span>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered px-3 mx-0 d-flex justify-content-center w-100">
+            <div class="modal-content w-100">
+                <div class="modal-header d-flex gap-2 border border-0">
+                    <!-- 未上傳圖片&bs框架 -->
+                    <!-- <div class="primary-option-img d-flex flex-column gap-1">
+                        <p class="g-600 visible">主規格選項</p>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                        </div>
+                    </div> -->
+                    <!-- 未上傳圖片&JS -->
+                    <div class="primary-option-img d-flex flex-column gap-1 w-50 ">
+                        <p class="g-600 visible">主規格選項</p>
+                        <div class="img-wrapper d-flex justify-content-center align-items-center w-100 ratio ratio-1x1">
+                            <form action="#" class="w-100 d-flex justify-content-center align-items-center">
+                                <input type="file" class="file-input" hidden>
+                                <i class="fa-solid fa-arrow-up-from-bracket g-400 fs-3"></i>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 未上傳圖片&bs框架 -->
+                    <!-- <div class="primary-option-img d-flex flex-column gap-1">
+                        <p class="g-600 visible">主規格選項</p>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                        </div>
+                    </div> -->
+                    <!-- 未上傳圖片&JS -->
+                    <div class="primary-option-img d-flex flex-column gap-1 w-50">
+                        <p class="g-600 visible">主規格選項</p>
+                        <div class="img-wrapper d-flex justify-content-center align-items-center w-100 ratio ratio-1x1">
+                            <form action="#" class="w-100 d-flex justify-content-center align-items-center">
+                                <input type="file" class="file-input" hidden>
+                                <i class="fa-solid fa-arrow-up-from-bracket g-400 fs-3"></i>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body d-flex flex-column">
+                    <div class="primary-spec d-flex gap-2">
+                        <div class="input-field w-50">
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-1 d-flex align-items-center">
+                                    <p class="p-small fw-bold">主規格名稱</p>
+                                </div>
+                                <div class="input-group flex-nowrap">
+                                    <input type="text" class="form-control border border-end-0" placeholder="顏色"
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping" maxlength="25"
+                                        minlength="1">
+                                    <span class="input-group-text border border-start-0 bg-white p-small p-300"
+                                        id="addon-wrapping">0/25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right d-flex flex-column align-items-center gap-2 w-50">
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="紅色、白色..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light"></i>
+                                </div>
+                            </div>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="紅色、白色..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light"></i>
+                                </div>
+                            </div>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="紅色、白色..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light invisible"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="secondary-spec d-flex gap-2">
+                        <div class="input-field w-50">
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-1 d-flex align-items-center">
+                                    <p class="p-small fw-bold">次規格名稱</p>
+                                </div>
+                                <div class="input-group flex-nowrap">
+                                    <input type="text" class="form-control border border-end-0" placeholder="尺寸"
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping" maxlength="25"
+                                        minlength="1">
+                                    <span class="input-group-text border border-start-0 bg-white p-small p-300"
+                                        id="addon-wrapping">0/25</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right d-flex flex-column align-items-center gap-2 w-50">
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="S、M、L..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light"></i>
+                                </div>
+                            </div>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="S、M、L..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light"></i>
+                                </div>
+                            </div>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="S、M、L..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light"></i>
+                                </div>
+                            </div>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div class="input-title gap-auto d-flex align-items-center">
+                                    <p class="p-small fw-bold d-inline-block">選項</p>
+                                </div>
+                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                    <input type="text" class="form-control" placeholder="S、M、L..."
+                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                    <i class="fa-solid fa-trash-can p-700 fw-light invisible"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button"
+                        class="btn btn-outline-secondary w-100 d-flex justify-content-center align-items-center gap-1">
+                        <p>批次編輯規格...</p>
+                    </button>
+                    <div class="spec-info d-flex flex-column gap-1">
+                        <div class="form-title d-flex flex-column gap-2">
+                            <h6>規格資料</h6>
+                            <div class="file-input-field d-flex flex-column gap-1">
+                                <div
+                                    class="input-title form-check form-switch d-flex justify-content-between align-items-center flex-nowrap p-0">
+                                    <label class="form-check-label p-small g-600"
+                                        for="switchCheckDefault">需要設定優惠價格？請點擊右方開關&rarr;</label>
+                                    <input class="form-check-input m-0 fs-5" type="checkbox" role="switch"
+                                        id="switchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-items d-flex flex-column gap-2 w-100">
+                            <table class="table w-100 m-0 px-1">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="col-4 border-bottom py-3"
+                                            style="color: var(--secondary-700);">
+                                            主規格選項</th>
+                                        <th scope="col" class="pe-2 border-bottom py-3">庫存數</th>
+                                        <th scope="col" style="padding-left: 12px;" class="border-bottom py-3">價格</th>
+                                        <th scope="col" style="padding-left: 12px;" class="pe-2 border-bottom py-3">優惠價
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="w-100">
+                                    <tr>
+                                        <th scope="row"
+                                            class="col-4 ps-2 pt-1 px-1 mt-2 d-inline-flex align-items-center w-100"
+                                            style="color: var(--secondary-700);">次規格選項
+                                        </th>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="數量"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="價格"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="優惠價"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"
+                                            class="col-4 ps-2 pt-1 px-1 mt-2 d-inline-flex align-items-center w-100"
+                                            style="color: var(--secondary-700);">次規格選項
+                                        </th>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="數量"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="價格"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="優惠價"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"
+                                            class="col-4 ps-2 pt-1 pb-3 px-1 mt-2 d-inline-flex align-items-center w-100"
+                                            style="color: var(--secondary-700);">次規格選項
+                                        </th>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="數量"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-nowrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="價格"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="p-1 pt-2 pe-0">
+                                            <div class="file-input-field d-flex flex-column gap-1">
+                                                <div class="input-group d-flex align-items-center flex-wrap gap-1">
+                                                    <input type="text" class="form-control" placeholder="優惠價"
+                                                        aria-label="primarySpecName" aria-describedby="addon-wrapping">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+    <script src="js/product.js"></script>
 </body>
 
 </html>
