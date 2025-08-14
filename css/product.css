@@ -1,0 +1,220 @@
+/* 全域 */
+/* Variables */
+:root {
+    /* color */
+    --primary-700: #CC4402;
+    --primary-600: #DD5300;
+    --primary-500: #FF6000;
+    --primary-300: #FDDDC8;
+    --primary-100: #FFF2EA;
+    --secondary-700: #475F7B;
+    --secondary-500: #5C90CD;
+    --secondary-300: #91BEF2;
+    --gray-30: #F8F8F8;
+    --gray-50: #EFEFEF;
+    --gray-100: #EAEAEA;
+    --gray-200: #E1E1E1;
+    --gray-300: #D8D8D8;
+    --gray-400: #CECECE;
+    --gray-500: #C5C5C5;
+    --gray-600: #A5A5A5;
+    --gray-700: #868686;
+    --gray-800: #666666;
+    --gray-900: #474747;
+    --white: #ffffff;
+    --black: #000000;
+    --warning: #E64B4B;
+    /* Text-size styles */
+    /* base size: tw--p (16px) */
+    --tw--h1: 3rem;
+    --tw--h2: 2.25rem;
+    --tw--h3: 1.88rem;
+    --tw--h4: 1.75rem;
+    --tw--h5: 1.38rem;
+    --tw--h6: 1.12rem;
+    --tw--p: 1rem;
+    --tw--p-small: 0.88rem;
+    /* Effect styles */
+    --header-shadow-m: 0px 2px 8px rgba(51, 51, 51, 0.15);
+    --footer-shadow-m: 0px -2px 15px rgba(102, 102, 102, 0.15);
+    --card-shadow: 0px 2px 5px rgba(151, 81, 51, 0.15);
+    /* body */
+    --body--min-width: 375px;
+    --body--max-width: 767px;
+    /* button */
+    --button--padding-x: 30px;
+    --button--padding-y: 12px;
+    --button--border-radius: 4px;
+    --button--gap: 4px;
+    --button--secondary-border: 1px;
+    --button--xs-padding: 4px;
+    --button--xs-border-radius: 50px;
+    /* card */
+    --card--padding: 24px;
+    --card--border-radius: 8px;
+    --card--shadow-y: 2px;
+    --card--shadow-blur: 5px;
+    /* container-fluid */
+    --container-fluid--column: 3px;
+    --container-fluid--padding-x: 24px;
+    --container-fluid--padding-y: 48px;
+    --container-fluid--gap: 48px;
+    /* footer */
+    --footer--padding-x: 36px;
+    --footer--padding-y: 12px;
+    --footer--gap: 12px;
+    --footer--shadow-y: -2px;
+    --footer--shadow-blur: 15px;
+    /* header */
+    --header--shadow-y: 2px;
+    --header--shadow-blur: 8px;
+    --header--padding-x: 24px;
+    --header--padding-y: 12px;
+    /* input-field */
+    --input-field--border-radius: 4px;
+    --input-field--padding-x: 12px;
+    --input-field--padding-y: 8px;
+    --input-field--border: 1px;
+    --input-field--gap: 8px;
+    /* modal */
+    --modal--padding-x: 24px;
+    --modal--header-padding-top: 32px;
+    --modal--body-padding-y: 32px;
+    --modal--body-gap: 32px;
+    --modal--border-radius: 8px;
+    /* pop-up */
+    --pop-up--padding-x: 80px;
+    --pop-up--padding-y: 72px;
+    --pop-up--border-radius: 8px;
+    /* progress-bar */
+    --progress-bar--padding-top: 60px;
+    /* section */
+    --section--padding-top: 60px;
+    --section--padding-bottom: 80px;
+    /* textarea */
+    --textarea--border: 0.5px;
+    --textarea--padding-bottom: 60px;
+    /* gap */
+    --gap-xxs: 8px;
+    --gap-xs: 16px;
+    --gap-md: 24px;
+    --gap-lg: 28px;
+    --gap-xl: 32px;
+    --gap-xxl: 48px;
+}
+
+/* Color */
+.g-600 {
+    color: var(--gray-600);
+}
+
+.p-700 {
+    color: var(--primary-700);
+}
+
+/* Heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: var(--tw--h1);
+}
+
+h2 {
+    font-size: var(--tw--h2);
+}
+
+h3 {
+    font-size: var(--tw--h3);
+}
+
+h4 {
+    font-size: var(--tw--h4);
+}
+
+h5 {
+    font-size: var(--tw--h5);
+}
+
+h6 {
+    font-size: var(--tw--h6);
+}
+
+p {
+    font-size: var(--tw--p);
+}
+
+.p-small {
+    font-size: var(--tw--p-small);
+    font-weight: 400;
+}
+
+body {
+    font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+}
+
+/* Components */
+.btn-primary,
+.btn-outline-secondary {
+    gap: var(--button--gap);
+    padding: var(--button--padding-y) var(--button--padding-x);
+    border-radius: var(--button--border-radius);
+}
+
+.btn-primary {
+    background-color: var(--primary-500);
+    color: white;
+}
+
+.btn-outline-secondary {
+    background-color: white;
+    color: var(--primary-500);
+    border: var(--button--secondary-border) solid var(--primary-500);
+}
+
+.header-m {
+    padding: var(--header--padding-y) var(--header--padding-x);
+    background-color: white;
+    box-shadow: 0 var(--layout-header-shadow-y, 2px) var(--layout-header-shadow-blur, 8px) 0 rgba(51, 51, 51, 0.15);
+}
+
+.logo {
+    width: 125px;
+}
+
+.form-theme h4 {
+    color: black;
+}
+
+.hyperlink {
+    color: var(--secondary-700);
+}
+
+.img-group {
+    gap: 12px;
+    padding: 12px 24px;
+}
+
+
+/* ===商品上架-選擇規格=== */
+main {
+    padding: 52px var(--container-fluid--padding-x) var(--container-fluid--padding-y) var(--container-fluid--padding-x);
+}
+
+.breadcrumb {
+    padding: 10px;
+    color: var(--secondary-700);
+}
+
+section {
+    padding-top: var(--section--padding-top);
+}
