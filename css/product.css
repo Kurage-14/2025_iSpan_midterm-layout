@@ -38,6 +38,7 @@
     --header-shadow-m: 0px 2px 8px rgba(51, 51, 51, 0.2);
     --footer-shadow-m: 0px -2px 8px rgba(51, 51, 51, 0.2);
     --card-shadow: 0px 2px 5px rgba(151, 81, 51, 0.15);
+    --dropdown-toggler-shadow: 1px 2px 2px rgba(151, 81, 51, 0.15);
     /* body */
     --body--min-width: 375px;
     --body--max-width: 767px;
@@ -127,6 +128,10 @@
     color: var(--primary-300);
 }
 
+.p-500 {
+    color: var(--primary-500);
+}
+
 .p-700 {
     color: var(--primary-700);
 }
@@ -184,6 +189,7 @@ p {
 
 html {
     overflow-y: scroll;
+    font-size: 16px
 }
 
 body {
@@ -282,10 +288,6 @@ input[type='text'] {
     border-color: var(--primary-500);
 }
 
-.img-wrapper {
-    border: 1.5px dashed var(--grey-600);
-}
-
 .form-switch .form-check-input {
     border: 2px solid var(--grey-200);
 }
@@ -349,8 +351,60 @@ td input.form-control {
 .secondary-spec-tag {
     padding: 4px 6px;
     border-radius: 4px;
-    border: 1px solid var(--secondary-700);
-    color: var(--secondary-700);
+    border: 1px solid var(--grey-700);
+    color: var(--grey-700);
+}
+
+.img-wrapper.default {
+    border: 1.5px dashed var(--grey-600);
+}
+
+.img-wrapper .dropdown {
+    position: absolute;
+    top: -5%;
+    left: 80%;
+}
+
+.dropdown-toggle::after {
+    /* display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em double;
+    border-right: .3em solid;
+    border-bottom: .3em solid;
+    border-left: .3em solid; */
+    content: none;
+}
+
+button.dropdown-toggle {
+    background-color: var(--primary-500);
+    width: 2rem;
+    height: 2rem;
+    box-shadow: var(--dropdown-toggler-shadow);
+    border: none;
+}
+
+.dropdown-toggle i {
+    color: white;
+}
+
+.dropdown-toggle:active,
+.dropdown-toggle:hover,
+.btn:first-child:active {
+    border: none;
+    background-color: var(--primary-100);
+}
+
+.dropdown-toggle.show {
+    background-color: white;
+    border: 1px solid var(--primary-300);
+}
+
+.dropdown-toggle.show i,
+.dropdown-toggle:active i,
+.dropdown-toggle:hover i {
+    color: var(--primary-500);
 }
 
 /* Body */
