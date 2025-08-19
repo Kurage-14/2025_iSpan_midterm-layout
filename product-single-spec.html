@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>商品上架-雙規格</title>
+    <title>商品上架-單規格</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -331,11 +331,11 @@
                 <h6>商品規格</h6>
                 <div class="card-items gap-2 d-flex flex-column">
                     <div class="card flex-column bg-white flex-fill">
+                        <img src="img/img12.jpg" alt="" class="card-img object-fit-cover">
                         <div class="card-body d-flex w-100 p-0">
-                            <img src="img/img12.jpg" alt="" class="card-img object-fit-cover">
                             <div class="info-items w-100 d-flex gap-3 flex-column">
                                 <div class="info-items-start d-flex flex-column gap-2">
-                                    <p class="fw-bold text-black text-break">紅色</p>
+                                    <p class="p-small fw-bold text-black text-break">紅色</p>
                                     <div class="secondary-spec-tag-items d-flex flex-fill gap-1 flex-wrap">
                                         <div
                                             class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
@@ -343,134 +343,43 @@
                                         </div>
                                         <div
                                             class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                            <p class="p-small">/ M</p>
+                                            <p class="p-small">M</p>
                                         </div>
                                         <div
-                                            class="secondary-spec-tag d-inline-flex align-items-center justify-content-center d-none">
+                                            class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
                                             <p class="p-small">測試測試測試測試測試測試測試測試測試測試</p>
                                         </div>
                                         <div
                                             class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                            <p class="p-small">/ L</p>
+                                            <p class="p-small">L</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info-items-end d-flex justify-content-end gap-1 flex-fill">
-                                    <div class="info-quantity d-flex flex-column gap-1 col-3">
+                                <div class="info-items-end d-flex flex-column gap-1 flex-fill">
+                                    <div class="info-quantity d-flex justify-content-between">
                                         <p class="p-small g-800">庫存量</p>
-                                        <p class="p-small p-700">金額</p>
-                                    </div>
-                                    <div class="info-price d-flex flex-column gap-1 col-6">
-                                        <div class="quantity-range d-flex gap-1 justify-content-end">
+                                        <div class="quantity-range d-inline-flex justify-content-end gap-1">
                                             <p class="p-small g-800">100</p>
                                             <p class="p-small g-800">~</p>
                                             <p class="p-small g-800">200</p>
                                         </div>
-                                        <!-- <div class="price-and-sale d-flex flex-column gap-1"> -->
-                                        <div class="price-range d-flex gap-1 justify-content-end">
-                                            <p class="p-small g-600 text-decoration-line-through">$100</p>
-                                            <p class="p-small g-600 text-decoration-line-through">~</p>
-                                            <p class="p-small g-600 text-decoration-line-through">$200</p>
-                                        </div>
-                                        <div class="sale-range d-flex gap-1 justify-content-end">
-                                            <p class="p-small p-700 ">$100</p>
-                                            <p class="p-small p-700 ">~</p>
-                                            <p class="p-small p-700">$200</p>
-                                        </div>
-                                        <!-- </div> -->
                                     </div>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-ellipsis-vertical g-900"></i>
-                        </div>
-                    </div>
-                    <div class="card flex-column bg-white flex-fill">
-                        <div class="card-body d-flex w-100 p-0">
-                            <img src="img/img12.jpg" alt="" class="card-img object-fit-cover">
-                            <div class="info-items w-100 d-flex gap-3 flex-column">
-                                <div class="info-items-start d-flex flex-column">
-                                    <p class="fw-bold text-black text-break">紅色</p>
-                                    <div class="secondary-spec-tag-items d-flex flex-fill gap-1 flex-wrap">
-
-                                        <!-- <div
-                                            class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                            <p class="p-small">/ M</p>
-                                        </div> -->
-                                        <!-- <div
-                                            class="secondary-spec-tag d-inline-flex align-items-center justify-content-center d-none">
-                                            <p class="p-small">測試測試測試測試測試測試測試測試測試測試</p>
-                                        </div> -->
-                                        <!-- <div
-                                            class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                            <p class="p-small">/ L</p>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <div class="info-items-end gap-1 d-flex gap-1 flex-fill align-items-start flex-column">
-                                    <div
-                                        class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                        <p class="p-small">S</p>
-                                    </div>
-
-                                    <div class="info-quantity d-flex justify-content-between w-100">
-                                        <div class="d-flex gap-1">
-                                            <p class="p-small g-800">庫存量</p>
-                                            <p class="p-small g-800 justify-content-end">100</p>
+                                    <div class="info-price d-flex justify-content-between">
+                                        <p class="p-small p-700">金額</p>
+                                        <div
+                                            class="price-and-sale d-flex flex-column gap-1 justify-content-center align-items-center">
+                                            <div class="price-range d-flex gap-1">
+                                                <p class="p-small g-600 text-decoration-line-through">$100</p>
+                                                <p class="p-small g-600 text-decoration-line-through">~</p>
+                                                <p class="p-small g-600 text-decoration-line-through">$200</p>
+                                            </div>
+                                            <div class="sale-range d-flex gap-1">
+                                                <p class="p-small p-700 ">$100</p>
+                                                <p class="p-small p-700 ">~</p>
+                                                <p class="p-small p-700">$200</p>
+                                            </div>
                                         </div>
-                                        <div class="d-flex justify-content-end gap-1">
-                                            <p class="p-small g-600 text-decoration-line-through">$100</p>
-                                            <p class="p-small p-700 ">$100</p>
-                                        </div>
-
                                     </div>
-
-
-
-
-                                </div>
-                                <div class="info-items-end gap-1 d-flex gap-1 flex-fill align-items-start flex-column">
-                                    <div
-                                        class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                        <p class="p-small">M</p>
-                                    </div>
-
-                                    <div class="info-quantity d-flex justify-content-between w-100">
-                                        <div class="d-flex gap-1">
-                                            <p class="p-small g-800">庫存量</p>
-                                            <p class="p-small g-800 justify-content-end">100</p>
-                                        </div>
-                                        <div class="d-flex justify-content-end gap-1">
-                                            <p class="p-small g-600 text-decoration-line-through">$100</p>
-                                            <p class="p-small p-700 ">$100</p>
-                                        </div>
-
-                                    </div>
-
-
-
-
-                                </div>
-                                <div class="info-items-end gap-1 d-flex gap-1 flex-fill align-items-start flex-column">
-                                    <div
-                                        class="secondary-spec-tag d-inline-flex align-items-center justify-content-center">
-                                        <p class="p-small">L</p>
-                                    </div>
-
-                                    <div class="info-quantity d-flex justify-content-between w-100">
-                                        <div class="d-flex gap-1">
-                                            <p class="p-small g-800">庫存量</p>
-                                            <p class="p-small g-800 justify-content-end">100</p>
-                                        </div>
-                                        <div class="d-flex justify-content-end gap-1">
-                                            <p class="p-small g-600 text-decoration-line-through">$100</p>
-                                            <p class="p-small p-700 ">$100</p>
-                                        </div>
-
-                                    </div>
-
-
-
-
                                 </div>
                             </div>
                             <i class="fa-solid fa-ellipsis-vertical g-900"></i>
@@ -515,11 +424,11 @@
                                         <div
                                             class="price-and-sale d-flex flex-column gap-1 justify-content-center align-items-center">
                                             <div class="price-range d-flex gap-1">
-                                                <p class="p-small g-600 ">$100</p>
-                                                <p class="p-small g-600 ">~</p>
-                                                <p class="p-small g-600 ">$200</p>
+                                                <p class="p-small p-700 ">$100</p>
+                                                <p class="p-small p-700 ">~</p>
+                                                <p class="p-small p-700 ">$200</p>
                                             </div>
-                                            <div class="sale-range d-flex gap-1">
+                                            <div class="sale-range d-flex gap-1 d-none">
                                                 <p class="p-small p-700 ">$100</p>
                                                 <p class="p-small p-700 ">~</p>
                                                 <p class="p-small p-700">$200</p>
